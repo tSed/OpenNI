@@ -426,23 +426,23 @@ logger.info("Copying install script...")
 
 copy_install_script(PLATFORM, "CreateRedist/install.sh", REDIST_DIR)
 
-#-------------Build Samples---------------------------------------------------#
-print "* Building Samples in release configuration......"
-logger.info("Building Samples in release configuration...")
-
-# Build project solution
-execute_check("make " + MAKE_ARGS + " -C " + REDIST_DIR + "/Samples/Build " + " > "+SCRIPT_DIR+"/Output/BuildSmpRelease.txt", "Build samples in release")
-
-print "* Building Samples in debug configuration......"
-logger.info("Building Samples in debug configuration...")
-
-# Build project solution
-execute_check("make " + MAKE_ARGS + " CFG=Debug -C " + REDIST_DIR + "/Samples/Build > "+SCRIPT_DIR+"/Output/BuildSmpDebug.txt", "Build samples in debug")
-
-# delete intermidiate files
-for sample in samples_list:
-   os.system("rm -rf " + REDIST_DIR + "/Samples/"+sample+"/" + PLATFORM + "/Debug")
-   os.system("rm -rf " + REDIST_DIR + "/Samples/"+sample+"/" + PLATFORM + "/Release")
+# #-------------Build Samples---------------------------------------------------#
+# print "* Building Samples in release configuration......"
+# logger.info("Building Samples in release configuration...")
+#
+# # Build project solution
+# execute_check("make " + MAKE_ARGS + " -C " + REDIST_DIR + "/Samples/Build " + " > "+SCRIPT_DIR+"/Output/BuildSmpRelease.txt", "Build samples in release")
+#
+# print "* Building Samples in debug configuration......"
+# logger.info("Building Samples in debug configuration...")
+#
+# # Build project solution
+# execute_check("make " + MAKE_ARGS + " CFG=Debug -C " + REDIST_DIR + "/Samples/Build > "+SCRIPT_DIR+"/Output/BuildSmpDebug.txt", "Build samples in debug")
+#
+# # delete intermidiate files
+# for sample in samples_list:
+#    os.system("rm -rf " + REDIST_DIR + "/Samples/"+sample+"/" + PLATFORM + "/Debug")
+#    os.system("rm -rf " + REDIST_DIR + "/Samples/"+sample+"/" + PLATFORM + "/Release")
 
 #-------------Create TAR-------------------------------------------------------#
 print "* Creating tar......"
