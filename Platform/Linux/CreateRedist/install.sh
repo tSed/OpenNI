@@ -122,14 +122,14 @@ if [ "$install" = yes ]; then
 		gacutil -i Bin/OpenNI.net.dll -package 2.0 $GACDIR
 	fi
 
-	# java wrappers
-	printf "creating java bindings directory..."
-	mkdir -p $INSTALL_JAR
-	printf "OK\n"
+	# # java wrappers
+	# printf "creating java bindings directory..."
+	# mkdir -p $INSTALL_JAR
+	# printf "OK\n"
 
-	printf "Installing java bindings..."
-	cp $JAR_FILES $INSTALL_JAR
-	printf "OK\n"
+	# printf "Installing java bindings..."
+	# cp $JAR_FILES $INSTALL_JAR
+	# printf "OK\n"
 
 	printf "\n*** DONE ***\n\n"
 

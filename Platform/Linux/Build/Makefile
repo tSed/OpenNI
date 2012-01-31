@@ -37,8 +37,8 @@ ALL_JAVA_PROJS = \
 ALL_CORE_PROJS = \
 	OpenNI \
 	$(ALL_MODULES) \
-	$(ALL_UTILS) \
-	$(ALL_JAVA_PROJS)
+	$(ALL_UTILS)
+#	$(ALL_JAVA_PROJS)
 
 # list all samples
 CORE_SAMPLES = \

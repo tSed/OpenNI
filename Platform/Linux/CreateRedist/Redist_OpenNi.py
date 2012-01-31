@@ -306,7 +306,7 @@ shutil.copy("Bin/" + PLATFORM + "-Release/libnimCodecs"+LIBS_TYPE, REDIST_DIR + 
 shutil.copy("Bin/" + PLATFORM + "-Release/libnimMockNodes"+LIBS_TYPE, REDIST_DIR + "/Lib")
 shutil.copy("Bin/" + PLATFORM + "-Release/libnimRecorder"+LIBS_TYPE, REDIST_DIR + "/Lib")
 shutil.copy("Bin/" + PLATFORM + "-Release/libOpenNI"+LIBS_TYPE, REDIST_DIR + "/Lib")
-shutil.copy("Bin/" + PLATFORM + "-Release/libOpenNI.jni"+LIBS_TYPE, REDIST_DIR + "/Lib")
+# shutil.copy("Bin/" + PLATFORM + "-Release/libOpenNI.jni"+LIBS_TYPE, REDIST_DIR + "/Lib")
 
 #bin
 MonoDetected = 0
@@ -319,10 +319,10 @@ if PLATFORM == 'x86' or PLATFORM == 'x64':
         shutil.copy("Bin/" + PLATFORM + "-Release/OpenNI.net.dll", REDIST_DIR + "/Samples/Bin/" + PLATFORM + "-Release")
         MonoDetected = 1
 
-# java wrapper
-shutil.copy("Bin/" + PLATFORM + "-Release/org.OpenNI.jar", REDIST_DIR + "/Jar")
-shutil.copy("Bin/" + PLATFORM + "-Release/org.OpenNI.jar", REDIST_DIR + "/Samples/Bin/" + PLATFORM + "-Debug")
-shutil.copy("Bin/" + PLATFORM + "-Release/org.OpenNI.jar", REDIST_DIR + "/Samples/Bin/" + PLATFORM + "-Release")
+# # java wrapper
+# shutil.copy("Bin/" + PLATFORM + "-Release/org.OpenNI.jar", REDIST_DIR + "/Jar")
+# shutil.copy("Bin/" + PLATFORM + "-Release/org.OpenNI.jar", REDIST_DIR + "/Samples/Bin/" + PLATFORM + "-Debug")
+# shutil.copy("Bin/" + PLATFORM + "-Release/org.OpenNI.jar", REDIST_DIR + "/Samples/Bin/" + PLATFORM + "-Release")
 
 # #docs
 # shutil.copytree("../../Source/DoxyGen/html", REDIST_DIR + "/Documentation/html")
