@@ -247,18 +247,18 @@ logger.info("Building OpenNI...")
 execute_check('make ' + MAKE_ARGS + ' -C ' + SCRIPT_DIR + '/../Build clean > ' + SCRIPT_DIR + '/Output/Build' + PROJECT_NAME + '_clean.txt', 'Cleaning')
 execute_check('make ' + MAKE_ARGS + ' -C ' + SCRIPT_DIR + '/../Build > ' + SCRIPT_DIR + '/Output/Build' + PROJECT_NAME + '.txt', 'Building')
 
-#--------------Doxygen---------------------------------------------------------#
-print "* Creating Doxygen..."
-logger.info("Creating DoxyGen...")
-os.chdir("../../../Source/DoxyGen");
-if os.path.exists("html"):
-    os.system("rm -rf html")
-# Running doxygen
-os.makedirs("html")
-execute_check("doxygen Doxyfile > "+ SCRIPT_DIR + "/Output/EngineDoxy.txt", "Creating Documentation")
-
-# remove unneeded files
-os.system("rm -rf html/*.map html/*.md5 html/*.hhc html/*.hhk html/*.hhp")
+# #--------------Doxygen---------------------------------------------------------#
+# print "* Creating Doxygen..."
+# logger.info("Creating DoxyGen...")
+# os.chdir("../../../Source/DoxyGen");
+# if os.path.exists("html"):
+#     os.system("rm -rf html")
+# # Running doxygen
+# os.makedirs("html")
+# execute_check("doxygen Doxyfile > "+ SCRIPT_DIR + "/Output/EngineDoxy.txt", "Creating Documentation")
+#
+# # remove unneeded files
+# os.system("rm -rf html/*.map html/*.md5 html/*.hhc html/*.hhk html/*.hhp")
 
 #-------------Create Redist Dir------------------------------------------------#
 print "* Creating Redist Dir..."
@@ -324,8 +324,8 @@ shutil.copy("Bin/" + PLATFORM + "-Release/org.OpenNI.jar", REDIST_DIR + "/Jar")
 shutil.copy("Bin/" + PLATFORM + "-Release/org.OpenNI.jar", REDIST_DIR + "/Samples/Bin/" + PLATFORM + "-Debug")
 shutil.copy("Bin/" + PLATFORM + "-Release/org.OpenNI.jar", REDIST_DIR + "/Samples/Bin/" + PLATFORM + "-Release")
 
-#docs
-shutil.copytree("../../Source/DoxyGen/html", REDIST_DIR + "/Documentation/html")
+# #docs
+# shutil.copytree("../../Source/DoxyGen/html", REDIST_DIR + "/Documentation/html")
 
 #include
 for includeFile in os.listdir("../../Include"):
