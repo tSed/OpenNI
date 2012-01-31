@@ -88,11 +88,13 @@ if [ "$install" = yes ]; then
 
 	# copy libraries
 	printf "copying shared libraries..."
+        mkdir -p $INSTALL_LIB
 	cp $LIB_FILES $INSTALL_LIB
 	printf "OK\n"
 
 	# utilities
 	printf "copying executables..."
+        mkdir -p $INSTALL_BIN
 	cp $BIN_FILES $INSTALL_BIN
 	printf "OK\n"
 
