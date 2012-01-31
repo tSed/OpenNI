@@ -1,6 +1,6 @@
 #############################################################################
 # OpenNI makefile.
-# 
+#
 # default configuration is Release. for a debug version use:
 # 	make CFG=Debug
 #
@@ -32,7 +32,7 @@ ALL_MONO_PROJS = \
 ALL_JAVA_PROJS = \
 	Wrappers/OpenNI.jni \
 	Wrappers/OpenNI.java
-	
+
 # list all core projects
 ALL_CORE_PROJS = \
 	OpenNI \
@@ -51,7 +51,7 @@ CORE_SAMPLES = \
 	Samples/NiCRead \
 	Samples/NiAudioSample \
 	Samples/NiSimpleSkeleton \
-	
+
 ifeq "$(GLUT_SUPPORTED)" "1"
 	CORE_SAMPLES += \
 		Samples/NiViewer \
@@ -73,7 +73,7 @@ MONO_SAMPLES = \
 MONO_FORMS_SAMPLES = \
 	Samples/SimpleViewer.net \
 	Samples/UserTracker.net
-	
+
 JAVA_SAMPLES = \
 	Samples/SimpleRead.java \
 	Samples/SimpleViewer.java \
@@ -94,7 +94,7 @@ ALL_PROJS = \
 # decide if CLR projects should be build
 ifneq "$(realpath /usr/bin/gmcs)" ""
 	MONO_INSTALLED = 1
-	
+
 	ifneq "$(shell gacutil -l | grep System.Windows.Forms)" ""
 		MONO_WINFORMS_INSTALLED = 1
 	endif
@@ -104,7 +104,7 @@ ifeq "$(FORCE_BUILD_CLR)" "1"
 	ifndef MONO_INSTALLED
 		DUMMY:=$(error Mono is not installed! Consider turning off FORCE_BUILD_CLR.)
 	endif
-	
+
 	ifndef MONO_WINFORMS_INSTALLED
 		DUMMY:=$(error Mono WinForms is not installed! Consider turning off FORCE_BUILD_CLR.)
 	endif
@@ -113,7 +113,7 @@ endif
 ifdef MONO_INSTALLED
 	ALL_PROJS += $(ALL_MONO_PROJS)
 	ALL_PROJS += $(MONO_SAMPLES)
-	
+
 	ifdef MONO_WINFORMS_INSTALLED
 		ALL_PROJS += $(MONO_FORMS_SAMPLES)
 	endif
@@ -123,16 +123,16 @@ ALL_PROJS_CLEAN = $(foreach proj,$(ALL_PROJS),$(proj)-clean)
 
 # define a function which creates a target for each proj
 define CREATE_PROJ_TARGET
-$1: 
+$1:
 	$$(MAKE) -C $1
 
-$1-clean: 
+$1-clean:
 	$$(MAKE) -C $1 clean
 endef
 
 ################ TARGETS ##################
 
-.PHONY: all $(ALL_PROJS) $(ALL_PROJS_CLEAN) install uninstall clean 
+.PHONY: all $(ALL_PROJS) $(ALL_PROJS_CLEAN) install uninstall clean
 
 # make all makefiles
 all: $(ALL_PROJS)

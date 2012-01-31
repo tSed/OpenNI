@@ -23,7 +23,7 @@ Darwin)
 	;;
 *)
 	MODULES="libnimMockNodes.so libnimCodecs.so libnimRecorder.so"
-	GACDIR="-gacdir $rootfs/usr"	
+	GACDIR="-gacdir $rootfs/usr"
 	;;
 esac
 
@@ -49,7 +49,7 @@ while [ "$1" ]; do
 		shift
 		rootfs=$1
 		;;
-	-h|--help) 
+	-h|--help)
 		echo "$usage"
 		exit 0
 		;;
@@ -85,7 +85,7 @@ export LD_LIBRARY_PATH=$INSTALL_LIB
 if [ "$install" = yes ]; then
 	printf "Installing OpenNI\n"
 	printf "****************************\n\n"
-	
+
 	# copy libraries
 	printf "copying shared libraries..."
 	cp $LIB_FILES $INSTALL_LIB
@@ -174,7 +174,7 @@ elif [ "$uninstall" = yes ]; then
 		rm -f $INSTALL_JAR/`basename $filename`
 	done
 	printf "OK\n"
-	
+
 	printf "\n*** DONE ***\n\n"
 
 fi
