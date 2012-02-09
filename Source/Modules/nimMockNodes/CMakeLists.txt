@@ -4,10 +4,10 @@
 ##
 ## Copyright (C) 2012 Aldebaran Robotics
 
-qi_create_lib(nimmocknodes
+qi_create_lib(nimMockNodes
   SRC *.h *.cpp
   )
-qi_use_lib(nimmocknodes
-  openni
+qi_use_lib(nimMockNodes
+  OpenNI
   )
-qi_stage_lib(nimmocknodes)
+qi_stage_lib(nimMockNodes)

@@ -4,11 +4,11 @@
 ##
 ## Copyright (C) 2012 Aldebaran Robotics
 
-qi_create_bin(nilicense
+qi_create_bin(niLicense
   SRC *.cpp
   )
-qi_use_lib(nilicense
-  openni
+qi_use_lib(niLicense
+  OpenNI
   usb_1
   dl
   )
