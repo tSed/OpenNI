@@ -11,4 +11,6 @@ qi_use_lib(OpenNI
   tinyxml
   usb_1
   )
-qi_stage_lib(OpenNI)
+qi_stage_lib(OpenNI
+  PATH_SUFFIXES ni
+  )
