@@ -8,6 +8,9 @@ qi_create_bin(niReg
   SRC *.cpp
   )
 qi_use_lib(niReg
-  OpenNI
   dl
+  pthread
+  rt
+  usb_1
+  OpenNI
   )

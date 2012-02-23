@@ -8,7 +8,9 @@ qi_create_bin(niLicense
   SRC *.cpp
   )
 qi_use_lib(niLicense
-  OpenNI
-  usb_1
   dl
+  pthread
+  rt
+  usb_1
+  OpenNI
   )
