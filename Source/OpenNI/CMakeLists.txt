@@ -16,4 +16,5 @@ qi_use_lib(OpenNI
   )
 qi_stage_lib(OpenNI
   PATH_SUFFIXES ni
+  DEPENDS dl pthread rt usb_1
   )
