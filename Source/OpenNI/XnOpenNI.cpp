@@ -6988,6 +6988,7 @@ XN_C_API XnStatus xnScriptNodeRun(XnNodeHandle hScript, XnEnumerationErrors* pEr
 	#define XN_OPEN_NI_INSTALL_PATH_ENV "OPEN_NI_INSTALL_PATH"
 #endif
 
+#ifndef XN_OPEN_NI_FILES_LOCATION
 #if (XN_PLATFORM == XN_PLATFORM_WIN32)
 	#define XN_OPEN_NI_FILES_LOCATION "\\Data\\"
 #elif (CE4100)
@@ -6999,6 +7000,7 @@ XN_C_API XnStatus xnScriptNodeRun(XnNodeHandle hScript, XnEnumerationErrors* pEr
 #else
 	#error "Unsupported platform!"
 #endif
+#endif /* XN_OPEN_NI_FILES_LOCATION */
 
 XnStatus xnGetOpenNIConfFilesPath(XnChar* strDest, XnUInt32 nBufSize)
 {
